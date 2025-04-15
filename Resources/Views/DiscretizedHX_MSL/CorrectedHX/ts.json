@@ -1,0 +1,23 @@
+{
+  "stickies" : [ "temperature_SecOut.T", "temperature_SecIn.T", "temperature_PrimOut.T", "temperature_PrimIn.T" ],
+  "stickyPositions" : [ {
+    "component" : "temperature_PrimIn",
+    "x" : -72.6425,
+    "y" : -38.80303
+  }, {
+    "component" : "temperature_PrimOut",
+    "x" : 71.88329,
+    "y" : 56.204746
+  }, {
+    "component" : "temperature_SecIn",
+    "x" : 57.62039,
+    "y" : -31.255527
+  }, {
+    "component" : "temperature_SecOut",
+    "x" : -37.737103,
+    "y" : 65.255936
+  } ],
+  "plots" : [ ],
+  "version" : "1",
+  "name" : "Ts"
+}

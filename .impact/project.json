@@ -1,0 +1,56 @@
+{
+  "name": "ProjectModelica",
+  "format": "1.0.0",
+  "dependencies": [
+    {
+      "name": "Modelica",
+      "versionSpecifier": "4.0.0"
+    }
+  ],
+  "content": [
+    {
+      "relpath": "Resources/Views",
+      "contentType": "VIEWS",
+      "defaultDisabled": false,
+      "id": "4091a8e45f27425eb08ca8ecc7c1ea66"
+    },
+    {
+      "relpath": "Resources/Favorites",
+      "contentType": "FAVORITES",
+      "defaultDisabled": false,
+      "id": "0f94ef2c53874f95b35ea2baeb25a895"
+    },
+    {
+      "relpath": "Resources/CustomFunctions",
+      "contentType": "CUSTOM_FUNCTIONS",
+      "defaultDisabled": false,
+      "id": "d1cf45d02ec94fae986c9dafdc0f3c55"
+    },
+    {
+      "relpath": "Resources/Custom",
+      "contentType": "GENERIC",
+      "defaultDisabled": false,
+      "id": "b803e516b6984d89b79a8b7afc84421c"
+    },
+    {
+      "relpath": "ReferenceResults",
+      "contentType": "REFERENCE_RESULTS",
+      "defaultDisabled": false,
+      "id": "35dc46e29b064f788c9bc23e6dcab74e"
+    },
+    {
+      "relpath": "Resources/ExperimentDefinitions",
+      "contentType": "EXPERIMENT_DEFINITIONS",
+      "defaultDisabled": false,
+      "id": "e90792c8ebb84e72b06d4092a9254e5d"
+    },
+    {
+      "relpath": "DiscretizedHX_MSL.mo",
+      "contentType": "MODELICA",
+      "name": "DiscretizedHX_MSL",
+      "defaultDisabled": false,
+      "id": "02177e8de58147eaa344e9297bec3def"
+    }
+  ],
+  "executionOptions": []
+}

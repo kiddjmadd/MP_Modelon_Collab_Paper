@@ -1,0 +1,39 @@
+{
+  "stickies" : [ ],
+  "stickyPositions" : [ ],
+  "plots" : [ {
+    "variables" : [ "HEX.Q_flow_2" ],
+    "independentVariable" : "time",
+    "x" : 0.0,
+    "y" : 0.0,
+    "width" : 4.0,
+    "height" : 2.0,
+    "title" : "analyze-dashboard-item-5e520801-6e38-46a5-b650-40acbed9f34a",
+    "config" : {
+      "type" : "SCATTER",
+      "layout" : {
+        "title" : {
+          "text" : "Plot 1"
+        }
+      },
+      "common" : { },
+      "variables" : { }
+    },
+    "axes" : {
+      "x" : {
+        "type" : "cases"
+      }
+    }
+  } ],
+  "globalConfig" : {
+    "plot" : {
+      "common" : {
+        "showTitle" : true,
+        "colorMode" : "variable"
+      }
+    },
+    "experiment" : { }
+  },
+  "version" : "1",
+  "name" : "impact-analysis-dashboard-view-1984"
+}
