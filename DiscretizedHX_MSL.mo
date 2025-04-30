@@ -7,7 +7,7 @@ package DiscretizedHX_MSL
 
   parameter Integer n_cvs = 5 "number of control volumes";
 
-  //replaceable package Medium = Modelica.Media.Water.ConstantPropertyLiquidWater;
+//replaceable package Medium = Modelica.Media.Water.ConstantPropertyLiquidWater;
   replaceable package Medium = .Modelica.Media.Water.StandardWaterOnePhase;
   //package Medium = Modelica.Media.Incompressible.Examples.Essotherm650;
     .DiscretizedHX_MSL.Components.BasicHX                                                   HEX(
@@ -32,7 +32,7 @@ package DiscretizedHX_MSL
       area_h_1=0.075*20,
       area_h_2=0.075*20,redeclare replaceable model HeatTransfer_2 = .DiscretizedHX_MSL.Components.ConstantFlowHeatTransfer_w_corr,
       Twall_start=300,
-      dT=10,redeclare replaceable model FlowModel_1 = .Modelica.Fluid.Pipes.BaseClasses.FlowModels.NominalLaminarFlow(dp_nominal = 1000,m_flow_nominal = 1),redeclare replaceable model FlowModel_2 = .Modelica.Fluid.Pipes.BaseClasses.FlowModels.NominalLaminarFlow(dp_nominal = 1000,m_flow_nominal = 1))         annotation (Placement(transformation(extent={{
+      dT=10,redeclare replaceable model FlowModel_1 = .Modelica.Fluid.Pipes.BaseClasses.FlowModels.NominalLaminarFlow(dp_nominal = 1000,m_flow_nominal = 1),redeclare replaceable model FlowModel_2 = .Modelica.Fluid.Pipes.BaseClasses.FlowModels.NominalLaminarFlow(dp_nominal = 1000,m_flow_nominal = 1), PID(initType = Modelica.Blocks.Types.Init.InitialOutput), controller_active(y = time > 300))         annotation (Placement(transformation(extent={{
               -26,-14},{34,46}})));
 
     .Modelica.Fluid.Sources.Boundary_pT ambient2(nPorts=1,
@@ -100,7 +100,7 @@ package DiscretizedHX_MSL
 
   parameter Integer n_cvs = 5 "number of control volumes";
 
-  //replaceable package Medium = Modelica.Media.Water.ConstantPropertyLiquidWater;
+//replaceable package Medium = Modelica.Media.Water.ConstantPropertyLiquidWater;
   replaceable package Medium = .Modelica.Media.Water.StandardWaterOnePhase;
   //package Medium = Modelica.Media.Incompressible.Examples.Essotherm650;
     Modelica.Fluid.Examples.HeatExchanger.BaseClasses.BasicHX                                                   HEX(
@@ -194,7 +194,7 @@ package DiscretizedHX_MSL
 
   equation
     Q_flows = {alpha0*surfaceAreas[i]*(heatPorts[i].T - Ts[i])*nParallel for i in 1:n};
-  //  corr_fac = 1;
+//  corr_fac = 1;
     annotation(Documentation(info="<html>
 <p>
 Simple heat transfer correlation with constant heat transfer coefficient, used as default component in distributed pipe models.
@@ -373,7 +373,7 @@ Simple heat transfer correlation with constant heat transfer coefficient, used a
     .Modelica.Units.SI.TemperatureDifference lmtd(start = 30);
 
     .Modelica.Units.SI.SpecificHeatCapacity c_p_water;
-    .Modelica.Units.SI.HeatFlowRate ideal_exchanger_duty(start=1.2e4);
+    .Modelica.Units.SI.HeatFlowRate ideal_exchanger_duty(start=2e4);
     .Modelica.Units.SI.Temperature hot_side_t_out(start=311);
     .Modelica.Units.SI.Temperature cold_side_t_out(start=281);
     .Modelica.Units.SI.CoefficientOfHeatTransfer U_overall(start = 25);
@@ -495,7 +495,7 @@ Simple heat transfer correlation with constant heat transfer coefficient, used a
     1/ U_overall = 1/(pipe_2.heatTransfer.alpha0) + 1/ (pipe_1.heatTransfer.alpha0) + wall.s/wall.k_wall;
     
     
-    lmtd = ((pipe_1.state_a.T - cold_side_t_out) - (hot_side_t_out - pipe_2.state_a.T)) / (.Modelica.Math.log(max((pipe_1.state_a.T - cold_side_t_out)/(hot_side_t_out - pipe_2.state_a.T), .Modelica.Constants.small)));
+    lmtd = max(((pipe_1.state_a.T - cold_side_t_out) - (hot_side_t_out - pipe_2.state_a.T)) / (.Modelica.Math.log(max((pipe_1.state_a.T - cold_side_t_out)/(hot_side_t_out - pipe_2.state_a.T), .Modelica.Constants.small))),1e-4);
 
     Q_flow_1 = sum(pipe_1.heatTransfer.Q_flows);
     Q_flow_2 = sum(pipe_2.heatTransfer.Q_flows);
